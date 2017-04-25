@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<!-- BEGIN CONTENT BODY -->
+<div class="page-content" th:fragment="content">
+    <!-- BEGIN PAGE HEADER-->
+
+    <!-- BEGIN PAGE BAR -->
+    <!-- END PAGE BAR -->
+    <!-- BEGIN PAGE TITLE-->
+    <h1 class="page-title"> Selamat Datang di Pencarian Jodoh</h1>
+    <!-- END PAGE TITLE-->
+    <!-- END PAGE HEADER-->
+    <div class="all">
+        <ul class="rig">
+            <li>
+                <a class="rig-cell" th:href="@{/home/search}">
+                    <img class="rig-img" th:src="@{/assets/img/ppl2.jpg}"/>
+                    <span class="rig-overlay"></span>
+                    <span class="rig-text">Cari Pasangan</span>
+                </a>
+            </li>
+            <li>
+                <a class="rig-cell" th:href="@{/home/profile}">
+                    <img class="rig-img" th:src="@{/assets/img/ppl1.jpg}" height="500"/>
+                    <span class="rig-overlay"></span>
+                    <span class="rig-text">Edit Profile</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- END CONTENT BODY -->
+</body>
+</html>

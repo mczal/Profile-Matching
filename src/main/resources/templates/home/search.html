@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div class="page-content" th:fragment="content">
+    <div class="page-content">
+        <!-- BEGIN PAGE HEADER-->
+
+        <!-- BEGIN PAGE BAR -->
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li>
+                    <a th:href="@{/}">Home</a>
+                    <i class="fa fa-circle"></i>
+                </li>
+                <li>
+                    <span>Find Couple</span>
+                </li>
+            </ul>
+
+        </div>
+        <!-- END PAGE BAR -->
+        <!-- BEGIN PAGE TITLE-->
+        <h1 class="page-title"> Find Couple
+        </h1>
+        <!-- END PAGE TITLE-->
+        <!-- END PAGE HEADER-->
+        <!-- BEGIN SAMPLE FORM PORTLET-->
+        <div class="portlet light bordered">
+            <div class="portlet-body form">
+                <form th:object="${object}" id="MatchingForm" role="form"
+                      th:action="@{/home/profile-matching}"
+                      method="POST">
+                    <div class="form-body">
+
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label>Gender</label>
+                                    <div class="mt-radio-list">
+
+                                        <label class="mt-radio mt-radio-outline"
+                                               th:each="gender : ${genders}" th:inline="text">
+                                            [[${gender}]]
+                                            <input th:field="*{gender}" required="required"
+                                                   type="radio"
+                                                   th:value="${gender}" name="gender"/>
+                                            <span></span>
+                                        </label>
+
+                                        <!--<label class="mt-radio mt-radio-outline"> Perempuan-->
+                                        <!--<input required="required" type="radio" value="Female"-->
+                                        <!--name="gender"/>-->
+                                        <!--<span></span>-->
+                                        <!--</label>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label>Umur</label>
+                                    <select th:field="*{age}" class="form-control">
+                                        <option checked="checked" value="ignore">Ignore</option>
+                                        <option value="&lt; 21"> &lt; 21</option>
+                                        <option value="21-25">21-25</option>
+                                        <option value="26-35">26-35</option>
+                                        <option value="36-40">36-40</option>
+                                        <option value="&gt; 40">&gt; 40</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label>Berat Badan</label>
+                                    <select th:field="*{weight}" class="form-control">
+                                        <option checked="checked" value="ignore">Ignore</option>
+                                        <option value="&lt; 50">&lt; 50</option>
+                                        <option value="50-60">50-60</option>
+                                        <option value="61-70">61-70</option>
+                                        <option value="71-80">71-80</option>
+                                        <option value="&gt; 80">&gt; 80</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label>Tinggi Badan</label>
+                                    <select th:field="*{height}" class="form-control">
+                                        <option checked="checked" value="ignore">Ignore</option>
+                                        <option value="&lt; 140">&lt; 140</option>
+                                        <option value="140-150">140-150</option>
+                                        <option value="151-161">151-161</option>
+                                        <option value="162-180">162-180</option>
+                                        <option value="&gt; 180">&gt; 180</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label>Agama</label>
+                                    <select th:field="*{religion}" class="form-control">
+                                        <!--<option checked="checked" value="ignore">Ignore</option>-->
+                                        <span th:each="religion : ${religions}">
+                                            <option th:value="${religion}"
+                                                    th:inline="text">[[${religion}]]</option>
+                                        </span>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <h4>Place Your Ideal Competency Value <i>(<span style="color: red">*</span>NKI:
+                            Nilai Kompetensi Ideal)</i>
+                        </h4>
+                        <hr/>
+
+                        <div class="row" th:each="crit : ${criterias}">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1 col-sm-offset-1 col-sm-10"
+                                     th:inline="text">
+                                    <div class="form-group">
+                                        <strong>Criteria: [[${crit.name}]] (From scale 1 -
+                                            5)</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" th:each="subcrit : ${crit.subcriterias}">
+                                <div class="col-md-offset-2 col-md-2 col-sm-offset-2 col-sm-2"
+                                     th:inline="text">
+                                    [[${subcrit.name}]]
+                                    <input id="nkis" name="nkis"
+                                           th:placeholder="${crit.id}+'|'+${subcrit.id}"
+                                           type="number" value="5"
+                                           class="form-control crit-subcrit-ideal"
+                                           required="required"/>
+                                </div>
+                            </div>
+                            <!--<br/>-->
+                            <div class="row">
+                                <div class="col-md-3 col-md-offset-1 col-sm-offset-1 col-sm-3">
+                                    <hr/>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn blue">Submit</button>
+                        <button type="button" class="btn default">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- END SAMPLE FORM PORTLET-->
+    </div>
+</div>
+
+<script th:fragment="custom_javascript" type="text/javascript">
+    /*<![CDATA[*/
+    window.onload = function () {
+        document.getElementById('MatchingForm').onsubmit = function (e) {
+            e.preventDefault();
+            var nums = document.getElementsByClassName('crit-subcrit-ideal');
+            console.log("nums", nums);
+            for (var indeks = 0; indeks < nums.length; indeks++) {
+                var item = nums.item(indeks);
+                var placehold = item.getAttribute('placeholder');
+                item.type = 'text';
+                item.value = placehold + '|' + item.value;
+                console.log("item updated:", item.value);
+            }
+            this.submit();
+        };
+    };
+    /*]]>*/
+</script>
+</body>
+</html>
