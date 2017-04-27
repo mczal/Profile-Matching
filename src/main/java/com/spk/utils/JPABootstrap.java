@@ -168,6 +168,246 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     anita.getUserSubcriterias().add(anitaCompliance);
 
     userService.save(anita);
+	
+	//----------------------------------------------------------//
+
+    User ferdi = new User();
+    anita.setUsername("ferdi");
+    anita.setPassword("123");
+    anita.setAge(27);
+    anita.setEmail("ferdi@gmail.com");
+    anita.setGender(Gender.MAN);
+    anita.setHeight(165.0);
+    anita.setName("Ferdi");
+    anita.setPhone("085720202095");
+    anita.setReligion(Religion.BUDDHA);
+    anita.setWeight(66.0);
+
+    UserSubcriteria anitaDominance = new UserSubcriteria();
+    anitaDominance.setScore(2);
+    anitaDominance.setUser(ferdi);
+    anitaDominance.setSubcriteria(dominance);
+    anita.getUserSubcriterias().add(anitaDominance);
+
+    UserSubcriteria anitaInfluence = new UserSubcriteria();
+    anitaInfluence.setScore(4);
+    anitaInfluence.setUser(ferdi);
+    anitaInfluence.setSubcriteria(influence);
+    anita.getUserSubcriterias().add(anitaInfluence);
+
+    UserSubcriteria anitaSteadiness = new UserSubcriteria();
+    anitaSteadiness.setScore(3);
+    anitaSteadiness.setUser(ferdi);
+    anitaSteadiness.setSubcriteria(steadiness);
+    anita.getUserSubcriterias().add(anitaSteadiness);
+
+    UserSubcriteria anitaCompliance = new UserSubcriteria();
+    anitaCompliance.setScore(5);
+    anitaCompliance.setUser(ferdi);
+    anitaCompliance.setSubcriteria(compliance);
+    anita.getUserSubcriterias().add(anitaCompliance);
+
+    userService.save(ferdi);
+	
+	//----------------------------------------------------------//
+
+    User laila = new User();
+    anita.setUsername("laila");
+    anita.setPassword("123");
+    anita.setAge(31);
+    anita.setEmail("laila@gmail.com");
+    anita.setGender(Gender.WOMAN);
+    anita.setHeight(170.0);
+    anita.setName("Laila");
+    anita.setPhone("08787878933");
+    anita.setReligion(Religion.MOESLIM);
+    anita.setWeight(60.0);
+
+    UserSubcriteria anitaDominance = new UserSubcriteria();
+    anitaDominance.setScore(3);
+    anitaDominance.setUser(laila);
+    anitaDominance.setSubcriteria(dominance);
+    anita.getUserSubcriterias().add(anitaDominance);
+
+    UserSubcriteria anitaInfluence = new UserSubcriteria();
+    anitaInfluence.setScore(4);
+    anitaInfluence.setUser(laila);
+    anitaInfluence.setSubcriteria(influence);
+    anita.getUserSubcriterias().add(anitaInfluence);
+
+    UserSubcriteria anitaSteadiness = new UserSubcriteria();
+    anitaSteadiness.setScore(4);
+    anitaSteadiness.setUser(laila);
+    anitaSteadiness.setSubcriteria(steadiness);
+    anita.getUserSubcriterias().add(anitaSteadiness);
+
+    UserSubcriteria anitaCompliance = new UserSubcriteria();
+    anitaCompliance.setScore(4);
+    anitaCompliance.setUser(laila);
+    anitaCompliance.setSubcriteria(compliance);
+    anita.getUserSubcriterias().add(anitaCompliance);
+
+    userService.save(laila);
+	
+	//----------------------------------------------------------//
+
+    User qisti = new User();
+    anita.setUsername("qisti");
+    anita.setPassword("123");
+    anita.setAge(35);
+    anita.setEmail("qisti@gmail.com");
+    anita.setGender(Gender.WOMAN);
+    anita.setHeight(173.0);
+    anita.setName("Qisti");
+    anita.setPhone("08112233454");
+    anita.setReligion(Religion.CHRISTIAN);
+    anita.setWeight(70.0);
+
+    UserSubcriteria anitaDominance = new UserSubcriteria();
+    anitaDominance.setScore(5);
+    anitaDominance.setUser(qisti);
+    anitaDominance.setSubcriteria(dominance);
+    anita.getUserSubcriterias().add(anitaDominance);
+
+    UserSubcriteria anitaInfluence = new UserSubcriteria();
+    anitaInfluence.setScore(3);
+    anitaInfluence.setUser(qisti);
+    anitaInfluence.setSubcriteria(influence);
+    anita.getUserSubcriterias().add(anitaInfluence);
+
+    UserSubcriteria anitaSteadiness = new UserSubcriteria();
+    anitaSteadiness.setScore(1);
+    anitaSteadiness.setUser(qisti);
+    anitaSteadiness.setSubcriteria(steadiness);
+    anita.getUserSubcriterias().add(anitaSteadiness);
+
+    UserSubcriteria anitaCompliance = new UserSubcriteria();
+    anitaCompliance.setScore(4);
+    anitaCompliance.setUser(qisti);
+    anitaCompliance.setSubcriteria(compliance);
+    anita.getUserSubcriterias().add(anitaCompliance);
+
+    userService.save(qisti);
+	
+	//----------------------------------------------------------//
+
+    User erlangga = new User();
+    anita.setUsername("erlangga");
+    anita.setPassword("123");
+    anita.setAge(37);
+    anita.setEmail("erlangga@gmail.com");
+    anita.setGender(Gender.MAN);
+    anita.setHeight(169.0);
+    anita.setName("Erlangga");
+    anita.setPhone("0813469675");
+    anita.setReligion(Religion.MOESLIM);
+    anita.setWeight(73.0);
+
+    UserSubcriteria anitaDominance = new UserSubcriteria();
+    anitaDominance.setScore(2);
+    anitaDominance.setUser(erlangga);
+    anitaDominance.setSubcriteria(dominance);
+    anita.getUserSubcriterias().add(anitaDominance);
+
+    UserSubcriteria anitaInfluence = new UserSubcriteria();
+    anitaInfluence.setScore(4);
+    anitaInfluence.setUser(erlangga);
+    anitaInfluence.setSubcriteria(influence);
+    anita.getUserSubcriterias().add(anitaInfluence);
+
+    UserSubcriteria anitaSteadiness = new UserSubcriteria();
+    anitaSteadiness.setScore(5);
+    anitaSteadiness.setUser(erlangga);
+    anitaSteadiness.setSubcriteria(steadiness);
+    anita.getUserSubcriterias().add(anitaSteadiness);
+
+    UserSubcriteria anitaCompliance = new UserSubcriteria();
+    anitaCompliance.setScore(3);
+    anitaCompliance.setUser(erlangga);
+    anitaCompliance.setSubcriteria(compliance);
+    anita.getUserSubcriterias().add(anitaCompliance);
+
+    userService.save(erlangga);
+	
+	//----------------------------------------------------------//
+
+    User vava = new User();
+    anita.setUsername("vava");
+    anita.setPassword("123");
+    anita.setAge(41);
+    anita.setEmail("vava@gmail.com");
+    anita.setGender(Gender.MAN);
+    anita.setHeight(177.0);
+    anita.setName("Vava");
+    anita.setPhone("08873627547");
+    anita.setReligion(Religion.CHRISTIAN);
+    anita.setWeight(81.0);
+
+    UserSubcriteria anitaDominance = new UserSubcriteria();
+    anitaDominance.setScore(3);
+    anitaDominance.setUser(vava);
+    anitaDominance.setSubcriteria(dominance);
+    anita.getUserSubcriterias().add(anitaDominance);
+
+    UserSubcriteria anitaInfluence = new UserSubcriteria();
+    anitaInfluence.setScore(3);
+    anitaInfluence.setUser(vava);
+    anitaInfluence.setSubcriteria(influence);
+    anita.getUserSubcriterias().add(anitaInfluence);
+
+    UserSubcriteria anitaSteadiness = new UserSubcriteria();
+    anitaSteadiness.setScore(3);
+    anitaSteadiness.setUser(vava);
+    anitaSteadiness.setSubcriteria(steadiness);
+    anita.getUserSubcriterias().add(anitaSteadiness);
+
+    UserSubcriteria anitaCompliance = new UserSubcriteria();
+    anitaCompliance.setScore(3);
+    anitaCompliance.setUser(vava);
+    anitaCompliance.setSubcriteria(compliance);
+    anita.getUserSubcriterias().add(anitaCompliance);
+
+    userService.save(vava);
+	
+	//----------------------------------------------------------//
+
+    User gita = new User();
+    anita.setUsername("gita");
+    anita.setPassword("123");
+    anita.setAge(41);
+    anita.setEmail("gita@gmail.com");
+    anita.setGender(Gender.WOMAN);
+    anita.setHeight(169.0);
+    anita.setName("Gita");
+    anita.setPhone("0856782973");
+    anita.setReligion(Religion.BUDDHA);
+    anita.setWeight(68.0);
+
+    UserSubcriteria anitaDominance = new UserSubcriteria();
+    anitaDominance.setScore(4);
+    anitaDominance.setUser(gita);
+    anitaDominance.setSubcriteria(dominance);
+    anita.getUserSubcriterias().add(anitaDominance);
+
+    UserSubcriteria anitaInfluence = new UserSubcriteria();
+    anitaInfluence.setScore(5);
+    anitaInfluence.setUser(gita);
+    anitaInfluence.setSubcriteria(influence);
+    anita.getUserSubcriterias().add(anitaInfluence);
+
+    UserSubcriteria anitaSteadiness = new UserSubcriteria();
+    anitaSteadiness.setScore(3);
+    anitaSteadiness.setUser(gita);
+    anitaSteadiness.setSubcriteria(steadiness);
+    anita.getUserSubcriterias().add(anitaSteadiness);
+
+    UserSubcriteria anitaCompliance = new UserSubcriteria();
+    anitaCompliance.setScore(1);
+    anitaCompliance.setUser(gita);
+    anitaCompliance.setSubcriteria(compliance);
+    anita.getUserSubcriterias().add(anitaCompliance);
+
+    userService.save(gita);
   }
 
   @Override
