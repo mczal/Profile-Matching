@@ -126,6 +126,18 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     userCompliance.setUser(budi);
     userCompliance.setSubcriteria(compliance);
     budi.getUserSubcriterias().add(userCompliance);
+	
+	UserSubcriteria userPlaymusic = new UserSubcriteria(); 
+    userPlaymusic.setScore(4); 
+    userPlaymusic.setUser(budi); 
+    userPlaymusic.setSubcriteria(playMusic); 
+    budi.getUserSubcriterias().add(userPlaymusic); 
+
+    UserSubcriteria userWorkout = new UserSubcriteria(); 
+    userWorkout.setScore(4); 
+    userWorkout.setUser(budi); 
+    userWorkout.setSubcriteria(workout); 
+    budi.getUserSubcriterias().add(userWorkout);
 
     userService.save(budi);
 
@@ -166,6 +178,18 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     anitaCompliance.setUser(anita);
     anitaCompliance.setSubcriteria(compliance);
     anita.getUserSubcriterias().add(anitaCompliance);
+	
+	UserSubcriteria anitaPlaymusic = new UserSubcriteria(); 
+    anitaPlaymusic.setScore(4); 
+    anitaPlaymusic.setUser(anita); 
+    anitaPlaymusic.setSubcriteria(playMusic); 
+    anita.getUserSubcriterias().add(anitaPlaymusic); 
+
+    UserSubcriteria anitaWorkout = new UserSubcriteria(); 
+    anitaWorkout.setScore(4); 
+    anitaWorkout.setUser(anita); 
+    anitaWorkout.setSubcriteria(workout); 
+    anita.getUserSubcriterias().add(anitaWorkout);
 
     userService.save(anita);
 	
@@ -206,6 +230,18 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     ferdiCompliance.setUser(ferdi);
     ferdiCompliance.setSubcriteria(compliance);
     ferdi.getUserSubcriterias().add(ferdiCompliance);
+	
+	UserSubcriteria ferdiPlaymusic = new UserSubcriteria(); 
+    ferdiPlaymusic.setScore(5); 
+    ferdiPlaymusic.setUser(ferdi); 
+    ferdiPlaymusic.setSubcriteria(playMusic); 
+    ferdi.getUserSubcriterias().add(ferdiPlaymusic); 
+
+    UserSubcriteria ferdiWorkout = new UserSubcriteria(); 
+    ferdiWorkout.setScore(3); 
+    ferdiWorkout.setUser(ferdi); 
+    ferdiWorkout.setSubcriteria(workout); 
+    ferdi.getUserSubcriterias().add(ferdiWorkout);
 
     userService.save(ferdi);
 	
@@ -246,6 +282,18 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     lailaCompliance.setUser(laila);
     lailaCompliance.setSubcriteria(compliance);
     laila.getUserSubcriterias().add(lailaCompliance);
+	
+	UserSubcriteria lailaPlaymusic = new UserSubcriteria(); 
+    lailaPlaymusic.setScore(2); 
+    lailaPlaymusic.setUser(laila); 
+    lailaPlaymusic.setSubcriteria(playMusic); 
+    laila.getUserSubcriterias().add(lailaPlaymusic); 
+
+    UserSubcriteria lailaWorkout = new UserSubcriteria(); 
+    lailaWorkout.setScore(5); 
+    lailaWorkout.setUser(laila); 
+    lailaWorkout.setSubcriteria(workout); 
+    laila.getUserSubcriterias().add(lailaWorkout);
 
     userService.save(laila);
 	
@@ -286,6 +334,18 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     qistiCompliance.setUser(qisti);
     qistiCompliance.setSubcriteria(compliance);
     qisti.getUserSubcriterias().add(qistiCompliance);
+	
+	UserSubcriteria qistiPlaymusic = new UserSubcriteria(); 
+    qistiPlaymusic.setScore(1); 
+    qistiPlaymusic.setUser(qisti); 
+    qistiPlaymusic.setSubcriteria(playMusic); 
+    qisti.getUserSubcriterias().add(qistiPlaymusic); 
+
+    UserSubcriteria qistiWorkout = new UserSubcriteria(); 
+    qistiWorkout.setScore(4); 
+    qistiWorkout.setUser(qisti); 
+    qistiWorkout.setSubcriteria(workout); 
+    qisti.getUserSubcriterias().add(qistiWorkout);
 
     userService.save(qisti);
 	
@@ -326,6 +386,18 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     erlanggaCompliance.setUser(erlangga);
     erlanggaCompliance.setSubcriteria(compliance);
     erlangga.getUserSubcriterias().add(erlanggaCompliance);
+	
+	UserSubcriteria erlanggaPlaymusic = new UserSubcriteria(); 
+    erlanggaPlaymusic.setScore(3); 
+    erlanggaPlaymusic.setUser(erlangga); 
+    erlanggaPlaymusic.setSubcriteria(playMusic); 
+    erlangga.getUserSubcriterias().add(erlanggaPlaymusic); 
+
+    UserSubcriteria erlanggaWorkout = new UserSubcriteria(); 
+    erlanggaWorkout.setScore(3); 
+    erlanggaWorkout.setUser(erlangga); 
+    erlanggaWorkout.setSubcriteria(workout); 
+    erlangga.getUserSubcriterias().add(erlanggaWorkout);
 
     userService.save(erlangga);
 	
@@ -366,6 +438,18 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     vavaCompliance.setUser(vava);
     vavaCompliance.setSubcriteria(compliance);
     vava.getUserSubcriterias().add(vavaCompliance);
+	
+	UserSubcriteria vavaPlaymusic = new UserSubcriteria(); 
+    vavaPlaymusic.setScore(1); 
+    vavaPlaymusic.setUser(vava); 
+    vavaPlaymusic.setSubcriteria(playMusic); 
+    vava.getUserSubcriterias().add(vavaPlaymusic); 
+
+    UserSubcriteria vavaWorkout = new UserSubcriteria(); 
+    vavaWorkout.setScore(3); 
+    vavaWorkout.setUser(vava); 
+    vavaWorkout.setSubcriteria(workout); 
+    vava.getUserSubcriterias().add(vavaWorkout);
 
     userService.save(vava);
 	
@@ -406,6 +490,18 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     gitaCompliance.setUser(gita);
     gitaCompliance.setSubcriteria(compliance);
     gita.getUserSubcriterias().add(gitaCompliance);
+	
+	UserSubcriteria gitaPlaymusic = new UserSubcriteria(); 
+    gitaPlaymusic.setScore(1); 
+    gitaPlaymusic.setUser(gita); 
+    gitaPlaymusic.setSubcriteria(playMusic); 
+    gita.getUserSubcriterias().add(gitaPlaymusic); 
+
+    UserSubcriteria gitaWorkout = new UserSubcriteria(); 
+    gitaWorkout.setScore(5); 
+    gitaWorkout.setUser(gita); 
+    gitaWorkout.setSubcriteria(workout); 
+    gita.getUserSubcriterias().add(gitaWorkout);
 
     userService.save(gita);
 	
@@ -446,6 +542,18 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     davidCompliance.setUser(david);
     davidCompliance.setSubcriteria(compliance);
     david.getUserSubcriterias().add(davidCompliance);
+	
+	UserSubcriteria davidPlaymusic = new UserSubcriteria(); 
+    davidPlaymusic.setScore(1); 
+    davidPlaymusic.setUser(david); 
+    davidPlaymusic.setSubcriteria(playMusic); 
+    david.getUserSubcriterias().add(davidPlaymusic); 
+
+    UserSubcriteria davidWorkout = new UserSubcriteria(); 
+    davidWorkout.setScore(4); 
+    davidWorkout.setUser(david); 
+    davidWorkout.setSubcriteria(workout); 
+    david.getUserSubcriterias().add(davidWorkout);
 
     userService.save(david);
 	
@@ -486,6 +594,18 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     rickyCompliance.setUser(ricky);
     rickyCompliance.setSubcriteria(compliance);
     ricky.getUserSubcriterias().add(rickyCompliance);
+	
+	UserSubcriteria rickyPlaymusic = new UserSubcriteria(); 
+    rickyPlaymusic.setScore(2); 
+    rickyPlaymusic.setUser(ricky); 
+    rickyPlaymusic.setSubcriteria(playMusic); 
+    ricky.getUserSubcriterias().add(rickyPlaymusic); 
+
+    UserSubcriteria rickyWorkout = new UserSubcriteria(); 
+    rickyWorkout.setScore(3); 
+    rickyWorkout.setUser(ricky); 
+    rickyWorkout.setSubcriteria(workout); 
+    ricky.getUserSubcriterias().add(rickyWorkout);
 
     userService.save(ricky);
 	
@@ -526,6 +646,18 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     adrianCompliance.setUser(adrian);
     adrianCompliance.setSubcriteria(compliance);
     adrian.getUserSubcriterias().add(adrianCompliance);
+	
+	UserSubcriteria adrianPlaymusic = new UserSubcriteria(); 
+    adrianPlaymusic.setScore(5); 
+    adrianPlaymusic.setUser(adrian); 
+    adrianPlaymusic.setSubcriteria(playMusic); 
+    adrian.getUserSubcriterias().add(adrianPlaymusic); 
+
+    UserSubcriteria adrianWorkout = new UserSubcriteria(); 
+    adrianWorkout.setScore(2); 
+    adrianWorkout.setUser(adrian); 
+    adrianWorkout.setSubcriteria(workout); 
+    adrian.getUserSubcriterias().add(adrianWorkout);
 
     userService.save(adrian);
 	
@@ -566,6 +698,18 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     rezaCompliance.setUser(reza);
     rezaCompliance.setSubcriteria(compliance);
     reza.getUserSubcriterias().add(rezaCompliance);
+	
+	UserSubcriteria rezaPlaymusic = new UserSubcriteria(); 
+    rezaPlaymusic.setScore(4); 
+    rezaPlaymusic.setUser(reza); 
+    rezaPlaymusic.setSubcriteria(playMusic); 
+    reza.getUserSubcriterias().add(rezaPlaymusic); 
+
+    UserSubcriteria rezaWorkout = new UserSubcriteria(); 
+    rezaWorkout.setScore(5); 
+    rezaWorkout.setUser(reza); 
+    rezaWorkout.setSubcriteria(workout); 
+    reza.getUserSubcriterias().add(rezaWorkout);
 
     userService.save(reza);
 	
@@ -606,6 +750,18 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     BrendaCompliance.setUser(Brenda); 
     BrendaCompliance.setSubcriteria(compliance); 
     Brenda.getUserSubcriterias().add(BrendaCompliance); 
+	
+	UserSubcriteria BrendaPlaymusic = new UserSubcriteria(); 
+    BrendaPlaymusic.setScore(5); 
+    BrendaPlaymusic.setUser(Brenda); 
+    BrendaPlaymusic.setSubcriteria(playMusic); 
+    Brenda.getUserSubcriterias().add(BrendaPlaymusic); 
+
+    UserSubcriteria BrendaWorkout = new UserSubcriteria(); 
+    BrendaWorkout.setScore(5); 
+    BrendaWorkout.setUser(Brenda); 
+    BrendaWorkout.setSubcriteria(workout); 
+    Brenda.getUserSubcriterias().add(BrendaWorkout);
 
     userService.save(Brenda); 
 
@@ -646,6 +802,18 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     CintaCompliance.setUser(Cinta); 
     CintaCompliance.setSubcriteria(compliance); 
     Cinta.getUserSubcriterias().add(CintaCompliance); 
+	
+	UserSubcriteria CintaPlaymusic = new UserSubcriteria(); 
+    CintaPlaymusic.setScore(5); 
+    CintaPlaymusic.setUser(Cinta); 
+    CintaPlaymusic.setSubcriteria(playMusic); 
+    Cinta.getUserSubcriterias().add(CintaPlaymusic); 
+
+    UserSubcriteria CintaWorkout = new UserSubcriteria(); 
+    CintaWorkout.setScore(1); 
+    CintaWorkout.setUser(Cinta); 
+    CintaWorkout.setSubcriteria(workout); 
+    Cinta.getUserSubcriterias().add(CintaWorkout);
 
     userService.save(Cinta); 
 	
@@ -686,6 +854,18 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     BryanCompliance.setUser(Bryan); 
     BryanCompliance.setSubcriteria(compliance); 
     Bryan.getUserSubcriterias().add(BryanCompliance); 
+	
+	UserSubcriteria BryanPlaymusic = new UserSubcriteria(); 
+    BryanPlaymusic.setScore(3); 
+    BryanPlaymusic.setUser(Bryan); 
+    BryanPlaymusic.setSubcriteria(playMusic); 
+    Bryan.getUserSubcriterias().add(BryanPlaymusic); 
+
+    UserSubcriteria BryanWorkout = new UserSubcriteria(); 
+    BryanWorkout.setScore(3); 
+    BryanWorkout.setUser(Bryan); 
+    BryanWorkout.setSubcriteria(workout); 
+    Bryan.getUserSubcriterias().add(BryanWorkout);
 
     userService.save(Bryan); 
 	
@@ -726,6 +906,18 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     RidaCompliance.setUser(Rida); 
     RidaCompliance.setSubcriteria(compliance); 
     Rida.getUserSubcriterias().add(RidaCompliance); 
+	
+	UserSubcriteria RidaPlaymusic = new UserSubcriteria(); 
+    RidaPlaymusic.setScore(2); 
+    RidaPlaymusic.setUser(Rida); 
+    RidaPlaymusic.setSubcriteria(playMusic); 
+    Rida.getUserSubcriterias().add(RidaPlaymusic); 
+
+    UserSubcriteria RidaWorkout = new UserSubcriteria(); 
+    RidaWorkout.setScore(3); 
+    RidaWorkout.setUser(Rida); 
+    RidaWorkout.setSubcriteria(workout); 
+    Rida.getUserSubcriterias().add(RidaWorkout);
 
     userService.save(Rida);
 	
@@ -765,7 +957,19 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     JokoCompliance.setScore(2); 
     JokoCompliance.setUser(Joko); 
     JokoCompliance.setSubcriteria(compliance); 
-    Joko.getUserSubcriterias().add(JokoCompliance); 
+    Joko.getUserSubcriterias().add(JokoCompliance);
+
+	UserSubcriteria JokoPlaymusic = new UserSubcriteria(); 
+    JokoPlaymusic.setScore(1); 
+    JokoPlaymusic.setUser(Joko); 
+    JokoPlaymusic.setSubcriteria(playMusic); 
+    Joko.getUserSubcriterias().add(JokoPlaymusic); 
+
+    UserSubcriteria JokoWorkout = new UserSubcriteria(); 
+    JokoWorkout.setScore(5); 
+    JokoWorkout.setUser(Joko); 
+    JokoWorkout.setSubcriteria(workout); 
+    Joko.getUserSubcriterias().add(JokoWorkout);
 
     userService.save(Joko); 
 	
@@ -806,6 +1010,18 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     SintaCompliance.setUser(Sinta); 
     SintaCompliance.setSubcriteria(compliance); 
     Sinta.getUserSubcriterias().add(SintaCompliance); 
+	
+	UserSubcriteria SintaPlaymusic = new UserSubcriteria(); 
+    SintaPlaymusic.setScore(3); 
+    SintaPlaymusic.setUser(Sinta); 
+    SintaPlaymusic.setSubcriteria(playMusic); 
+    Sinta.getUserSubcriterias().add(SintaPlaymusic); 
+
+    UserSubcriteria SintaWorkout = new UserSubcriteria(); 
+    SintaWorkout.setScore(4); 
+    SintaWorkout.setUser(Sinta); 
+    SintaWorkout.setSubcriteria(workout); 
+    Sinta.getUserSubcriterias().add(SintaWorkout);
 
     userService.save(Sinta); 
 	
@@ -845,7 +1061,19 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     JamesCompliance.setScore(1); 
     JamesCompliance.setUser(James); 
     JamesCompliance.setSubcriteria(compliance); 
-    James.getUserSubcriterias().add(JamesCompliance); 
+    James.getUserSubcriterias().add(JamesCompliance);
+
+	UserSubcriteria JamesPlaymusic = new UserSubcriteria(); 
+    JamesPlaymusic.setScore(5); 
+    JamesPlaymusic.setUser(James); 
+    JamesPlaymusic.setSubcriteria(playMusic); 
+    James.getUserSubcriterias().add(JamesPlaymusic); 
+
+    UserSubcriteria JamesWorkout = new UserSubcriteria(); 
+    JamesWorkout.setScore(5); 
+    JamesWorkout.setUser(James); 
+    JamesWorkout.setSubcriteria(workout); 
+    James.getUserSubcriterias().add(JamesWorkout);
 
     userService.save(James); 
 	
@@ -886,6 +1114,18 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     DessyCompliance.setUser(Dessy); 
     DessyCompliance.setSubcriteria(compliance); 
     Dessy.getUserSubcriterias().add(DessyCompliance); 
+	
+	UserSubcriteria DessyPlaymusic = new UserSubcriteria(); 
+    DessyPlaymusic.setScore(3); 
+    DessyPlaymusic.setUser(Dessy); 
+    DessyPlaymusic.setSubcriteria(playMusic); 
+    Dessy.getUserSubcriterias().add(DessyPlaymusic); 
+
+    UserSubcriteria DessyWorkout = new UserSubcriteria(); 
+    DessyWorkout.setScore(4); 
+    DessyWorkout.setUser(Dessy); 
+    DessyWorkout.setSubcriteria(workout); 
+    Dessy.getUserSubcriterias().add(DessyWorkout);
 
     userService.save(Dessy); 
 	
@@ -926,6 +1166,18 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     NicoCompliance.setUser(Nico); 
     NicoCompliance.setSubcriteria(compliance); 
     Nico.getUserSubcriterias().add(NicoCompliance); 
+	
+	UserSubcriteria NicoPlaymusic = new UserSubcriteria(); 
+    NicoPlaymusic.setScore(1); 
+    NicoPlaymusic.setUser(Nico); 
+    NicoPlaymusic.setSubcriteria(playMusic); 
+    Nico.getUserSubcriterias().add(NicoPlaymusic); 
+
+    UserSubcriteria NicoWorkout = new UserSubcriteria(); 
+    NicoWorkout.setScore(3); 
+    NicoWorkout.setUser(Nico); 
+    NicoWorkout.setSubcriteria(workout); 
+    Nico.getUserSubcriterias().add(NicoWorkout);
 
     userService.save(Nico);
 	
@@ -966,6 +1218,18 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     AstariCompliance.setUser(Astari); 
     AstariCompliance.setSubcriteria(compliance); 
     Astari.getUserSubcriterias().add(AstariCompliance); 
+	
+	UserSubcriteria AstariPlaymusic = new UserSubcriteria(); 
+    AstariPlaymusic.setScore(2); 
+    AstariPlaymusic.setUser(Astari); 
+    AstariPlaymusic.setSubcriteria(playMusic); 
+    Astari.getUserSubcriterias().add(AstariPlaymusic); 
+
+    UserSubcriteria AstariWorkout = new UserSubcriteria(); 
+    AstariWorkout.setScore(5); 
+    AstariWorkout.setUser(Astari); 
+    AstariWorkout.setSubcriteria(workout); 
+    Astari.getUserSubcriterias().add(AstariWorkout);
 
     userService.save(Astari); 
 	
@@ -1006,6 +1270,18 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     TaufikCompliance.setUser(Taufik); 
     TaufikCompliance.setSubcriteria(compliance); 
     Taufik.getUserSubcriterias().add(TaufikCompliance); 
+	
+	UserSubcriteria TaufikPlaymusic = new UserSubcriteria(); 
+    TaufikPlaymusic.setScore(1); 
+    TaufikPlaymusic.setUser(Taufik); 
+    TaufikPlaymusic.setSubcriteria(playMusic); 
+    Taufik.getUserSubcriterias().add(TaufikPlaymusic); 
+
+    UserSubcriteria TaufikWorkout = new UserSubcriteria(); 
+    TaufikWorkout.setScore(4); 
+    TaufikWorkout.setUser(Taufik); 
+    TaufikWorkout.setSubcriteria(workout); 
+    Taufik.getUserSubcriterias().add(TaufikWorkout);
 
     userService.save(Taufik); 
 	
@@ -1045,7 +1321,19 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     NicolasCompliance.setScore(3); 
     NicolasCompliance.setUser(Nicolas); 
     NicolasCompliance.setSubcriteria(compliance); 
-    Nicolas.getUserSubcriterias().add(NicolasCompliance); 
+    Nicolas.getUserSubcriterias().add(NicolasCompliance);
+
+	UserSubcriteria NicolasPlaymusic = new UserSubcriteria(); 
+    NicolasPlaymusic.setScore(4); 
+    NicolasPlaymusic.setUser(Nicolas); 
+    NicolasPlaymusic.setSubcriteria(playMusic); 
+    Nicolas.getUserSubcriterias().add(NicolasPlaymusic); 
+
+    UserSubcriteria NicolasWorkout = new UserSubcriteria(); 
+    NicolasWorkout.setScore(2); 
+    NicolasWorkout.setUser(Nicolas); 
+    NicolasWorkout.setSubcriteria(workout); 
+    Nicolas.getUserSubcriterias().add(NicolasWorkout);
 
     userService.save(Nicolas); 
   }
