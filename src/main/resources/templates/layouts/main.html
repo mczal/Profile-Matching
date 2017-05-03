@@ -6,8 +6,8 @@
 
     <meta content="" name="author"/>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all"
-          rel="stylesheet" type="text/css"/>
+    <!--<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all"-->
+    <!--rel="stylesheet" type="text/css"/>-->
     <link th:href="@{/assets/global/plugins/font-awesome/css/font-awesome.min.css}" rel="stylesheet"
           type="text/css"/>
     <link th:href="@{/assets/global/plugins/simple-line-icons/simple-line-icons.min.css}"
@@ -84,8 +84,14 @@
                             <li class="divider"></li>
 
                             <li>
-                                <a th:href="@{/login}">
-                                    Log Out </a>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <form method="post" th:action="@{/logout}">
+                                            <button class="btn btn-warning" type="submit">Log Out
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </li>

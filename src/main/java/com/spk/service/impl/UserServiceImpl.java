@@ -2,7 +2,9 @@ package com.spk.service.impl;
 
 import com.spk.dao.UserDao;
 import com.spk.model.User;
+import com.spk.model.utils.Gender;
 import com.spk.service.UserService;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -35,13 +37,25 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
+  public List<User> findByGender(Gender gender) {
+    return userDao.findByGender(gender);
+  }
+
+  @Override
+  public List<User> findByGenderAndUsernameNot(Gender gender, String username) {
+    return userDao.findByGenderAndUsernameIsNot(gender, username);
+  }
+
+  @Override
   public User findByUsername(String username) {
     return userDao.findByUsername(username);
   }
 
   @Override
   public User findOne(String id) {
-    return userDao.findOne(id);
+    User user = userDao.findOne(id);
+    Hibernate.initialize(user.getUserSubcriterias());
+    return user;
   }
 
   @Override

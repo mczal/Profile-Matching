@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div class="page-content" th:fragment="content">
+    <!-- BEGIN PAGE HEADER-->
+    <!-- BEGIN PAGE BAR -->
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li>
+                <a th:href="@{/home}">Home</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span>Search</span>
+            </li>
+        </ul>
+
+    </div>
+    <!-- END PAGE BAR -->
+    <!-- BEGIN PAGE TITLE-->
+    <h1 class="page-title" th:inline="text"> Search Results: #[[${count}]]
+    </h1>
+    <!-- END PAGE TITLE-->
+    <!-- END PAGE HEADER-->
+    <div class="search-page search-content-4">
+        <div class="search-table table-responsive">
+            <table class="table table-bordered table-striped table-condensed">
+                <thead class="bg-blue">
+                <tr>
+                    <th>
+
+                    </th>
+                    <th>
+
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr th:each="result : ${results}">
+                    <td>
+                        <img src="../assets/layouts/layout/img/logo.png"></img>
+                    </td>
+
+                    <td>
+                        <p th:inline="text">Nama Lengkap:<a href="#"> [[${result.user.name}]]</a>
+                        </p>
+                        <p th:inline="text">Gender: [[${result.user.gender}]]</p>
+                        <p th:inline="text">Umur: [[${result.user.age}]]</p>
+                        <p th:inline="text">Berat Badan: [[${result.user.weight}]]</p>
+                        <p th:inline="text">Tinggi Badan: [[${result.user.height}]]</p>
+                        <p th:inline="text">Agama: [[${result.user.religion}]]</p>
+                    </td>
+                </tr>
+
+                <!--<tr>-->
+                <!--<td>-->
+                <!--<img src="../assets/layouts/layout/img/logo.png"></img>-->
+                <!--</td>-->
+
+                <!--<td>-->
+                <!--<p>Nama Lengkap:<a href="#"> Putra Masketeer</a></p>-->
+                <!--<p>Gender: Pria</p>-->
+                <!--<p>Umur: 24</p>-->
+                <!--<p>Berat Badan: 65</p>-->
+                <!--<p>Tinggi Badan: 167</p>-->
+                <!--<p>Agama: Islam</p>-->
+                <!--<p>Pendidikan: S1</p>-->
+                <!--<p>Kemampuan Memasak: 3</p>-->
+                <!--<p>Pendidikan Nonformal: Pendidikan kecakapan hidup </p>-->
+                <!--</td>-->
+                <!--</tr>-->
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

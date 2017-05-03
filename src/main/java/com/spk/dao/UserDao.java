@@ -1,6 +1,7 @@
 package com.spk.dao;
 
 import com.spk.model.User;
+import com.spk.model.utils.Gender;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -17,6 +18,10 @@ public interface UserDao extends JpaRepository<User, String> {
   List<User> findByAgeLessThanEqual(Integer age);
 
   User findByEmail(String email);
+
+  List<User> findByGender(Gender gender);
+
+  List<User> findByGenderAndUsernameIsNot(Gender gender, String username);
 
   User findByUsername(String username);
 }

@@ -37,4 +37,10 @@ public class NKISubcriteria implements Serializable {
   public void setSubCriteriaId(String subCriteriaId) {
     this.subCriteriaId = subCriteriaId;
   }
+
+  @Override
+  public String toString() {
+    return "NKISubcriteria{" + "criteriaId='" + criteriaId + '\'' + ", ideal=" + ideal
+        + ", subCriteriaId='" + subCriteriaId + '\'' + '}';
+  }
 }

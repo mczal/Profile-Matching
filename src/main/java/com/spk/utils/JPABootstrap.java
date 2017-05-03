@@ -127,6 +127,18 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     userCompliance.setSubcriteria(compliance);
     budi.getUserSubcriterias().add(userCompliance);
 
+    UserSubcriteria userPlaymusic = new UserSubcriteria();
+    userPlaymusic.setScore(4);
+    userPlaymusic.setUser(budi);
+    userPlaymusic.setSubcriteria(playMusic);
+    budi.getUserSubcriterias().add(userPlaymusic);
+
+    UserSubcriteria userWorkout = new UserSubcriteria();
+    userWorkout.setScore(4);
+    userWorkout.setUser(budi);
+    userWorkout.setSubcriteria(workout);
+    budi.getUserSubcriterias().add(userWorkout);
+
     userService.save(budi);
 
     //----------------------------------------------------------//
@@ -167,12 +179,28 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     anitaCompliance.setSubcriteria(compliance);
     anita.getUserSubcriterias().add(anitaCompliance);
 
+    UserSubcriteria anitaPlaymusic = new UserSubcriteria();
+    anitaPlaymusic.setScore(4);
+    anitaPlaymusic.setUser(anita);
+    anitaPlaymusic.setSubcriteria(playMusic);
+    anita.getUserSubcriterias().add(anitaPlaymusic);
+
+    UserSubcriteria anitaWorkout = new UserSubcriteria();
+    anitaWorkout.setScore(4);
+    anitaWorkout.setUser(anita);
+    anitaWorkout.setSubcriteria(workout);
+    anita.getUserSubcriterias().add(anitaWorkout);
+
     userService.save(anita);
+
+    //-----------------------------------------
   }
 
   @Override
   public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-    loadCriteriaAndSubCriteria();
-    loadUserAndContent();
+    if (userService.findAll().size() <= 0) {
+      loadCriteriaAndSubCriteria();
+      loadUserAndContent();
+    }
   }
 }

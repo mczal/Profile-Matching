@@ -76,8 +76,9 @@ public class SearchDtoRequest implements Serializable {
   public List<NKISubcriteria> parseNkisString() {
     List<NKISubcriteria> results = new ArrayList<>();
     this.nkis.forEach(s -> {
+      //      System.out.println("\nS: " + s);
       NKISubcriteria nkiSubcriteria = new NKISubcriteria();
-      String[] splitter = s.split(",");
+      String[] splitter = s.split("\\|");
       nkiSubcriteria.setCriteriaId(splitter[0]);
       nkiSubcriteria.setSubCriteriaId(splitter[1]);
       nkiSubcriteria.setIdeal(Integer.parseInt(splitter[2]));

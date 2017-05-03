@@ -186,4 +186,13 @@ public class User extends McnBaseEntity {
     this.weight = weight;
   }
 
+  @Override
+  public String toString() {
+    return "User{" + "age=" + age + ", email='" + email + '\'' + ", enabled=" + enabled
+        + ", encryptedPassword='" + encryptedPassword + '\'' + ", gender=" + gender + ", height="
+        + height + ", name='" + name + '\'' + ", password='" + password + '\'' + ", phone='" + phone
+        + '\'' + ", religion=" + religion + ", roles=" + roles + ", userSubcriterias="
+        + userSubcriterias + ", username='" + username + '\'' + ", weight=" + weight + '}';
+  }
+
 }
