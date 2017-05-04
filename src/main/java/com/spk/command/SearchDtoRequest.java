@@ -15,6 +15,10 @@ public class SearchDtoRequest implements Serializable {
 
   private String age;
 
+  private List<String> bobotBcf = new ArrayList<>();
+
+  private List<String> bobotCrit = new ArrayList<>();
+
   private Gender gender;
 
   private String height;
@@ -31,6 +35,22 @@ public class SearchDtoRequest implements Serializable {
 
   public void setAge(String age) {
     this.age = age;
+  }
+
+  public List<String> getBobotBcf() {
+    return bobotBcf;
+  }
+
+  public void setBobotBcf(List<String> bobotBcf) {
+    this.bobotBcf = bobotBcf;
+  }
+
+  public List<String> getBobotCrit() {
+    return bobotCrit;
+  }
+
+  public void setBobotCrit(List<String> bobotCrit) {
+    this.bobotCrit = bobotCrit;
   }
 
   public Gender getGender() {
@@ -73,6 +93,23 @@ public class SearchDtoRequest implements Serializable {
     this.weight = weight;
   }
 
+  public List<BobotCritBSFBCF> parseBobotsz() {
+    List<BobotCritBSFBCF> results = new ArrayList<>();
+    this.bobotCrit.forEach(s -> {
+      this.bobotBcf.stream().filter(s1 -> s1.split("\\|")[0].equals(s.split("\\|")[0]))
+          .forEach(s1 -> {
+            BobotCritBSFBCF res = new BobotCritBSFBCF();
+            double bcf = Double.parseDouble(s1.split("\\|")[1]);
+            res.setBCF(bcf);
+            res.setBSF(1.0 - bcf);
+            res.setBobotCriteria(Double.parseDouble(s.split("\\|")[1]));
+            res.setCriteriaId(s.split("\\|")[0]);
+            results.add(res);
+          });
+    });
+    return results;
+  }
+
   public List<NKISubcriteria> parseNkisString() {
     List<NKISubcriteria> results = new ArrayList<>();
     this.nkis.forEach(s -> {
@@ -92,5 +129,6 @@ public class SearchDtoRequest implements Serializable {
     return "SearchDtoRequest{" + "age='" + age + '\'' + ", gender=" + gender + ", height='" + height
         + '\'' + ", nkis=" + nkis + ", religion=" + religion + ", weight='" + weight + '\'' + '}';
   }
+
 
 }

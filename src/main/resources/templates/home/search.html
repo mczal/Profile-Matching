@@ -134,26 +134,89 @@
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1 col-sm-offset-1 col-sm-10"
                                      th:inline="text">
-                                    <div class="form-group">
-                                        <strong>Criteria: [[${crit.name}]] (From scale 1 -
-                                            5)</strong>
+                                    <div class="row">
+                                        <div class="col-sm-5 col-md-5">
+                                            <div class="form-group">
+                                                <h3>Criteria: [[${crit.name}]]</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col-sm-5 col-md-5">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-sm-3">
+                                                        <strong>Bobot Criteria:</strong>
+                                                    </div>
+                                                    <div class="col-sm-5">
+                                                        <input th:placeholder="${crit.id}"
+                                                               step="0.1" type="number"
+                                                               value="0.5"
+                                                               name="bobotCrit" id="bobotCrit"
+                                                               class="form-control bobot-crits"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-sm-offset-1 col-md-offset-1 col-sm-2 col-md-2">
+                                    <div class="row">
+                                        <span class="form-control"><strong>BCF : BSF</strong></span>
+                                    </div>
+                                    <div class="row">
+                                        <hr/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-offset-1 col-md-offset-1 col-sm-8 col-md-8">
+                                    <div class="row">
+                                        <div class="col-sm-2 col-md-2">
+                                            <input id="bobotBcf" name="bobotBcf"
+                                                   oninput="bcfChange(this)"
+                                                   th:placeholder="${crit.id}" value="0.6"
+                                                   class="form-control bobot-bcf"
+                                                   type="number" step="0.1"/>
+                                        </div>
+                                        <div class="col-sm-2 col-md-2">
+                                            <span th:attr="id=${crit.id}"
+                                                  class="form-control">0.4</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4 col-md-4">
+                                            <hr/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-offset-2 col-md-offset-2 col-sm-4 col-md-4">
+                                    <strong>(From scale 1 - 5)</strong>
+                                </div>
+                            </div>
+                            <br/>
                             <div class="row" th:each="subcrit : ${crit.subcriterias}">
-                                <div class="col-md-offset-2 col-md-2 col-sm-offset-2 col-sm-2"
-                                     th:inline="text">
-                                    [[${subcrit.name}]]
-                                    <input id="nkis" name="nkis"
-                                           th:placeholder="${crit.id}+'|'+${subcrit.id}"
-                                           type="number" value="5"
-                                           class="form-control crit-subcrit-ideal"
-                                           required="required"/>
+                                <div class="row">
+                                    <div class="col-md-offset-2 col-md-2 col-sm-offset-2 col-sm-2"
+                                         th:inline="text">
+                                        [[${subcrit.name}]] <strong>[[${subcrit.factor}]]</strong>
+                                        <input id="nkis" name="nkis"
+                                               th:placeholder="${crit.id}+'|'+${subcrit.id}"
+                                               type="number" value="5"
+                                               class="form-control crit-subcrit-ideal"
+                                               required="required"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <br/>
                                 </div>
                             </div>
                             <!--<br/>-->
                             <div class="row">
-                                <div class="col-md-3 col-md-offset-1 col-sm-offset-1 col-sm-3">
+                                <div class="col-md-5 col-md-offset-1 col-sm-offset-1 col-sm-5">
                                     <hr/>
                                 </div>
                             </div>
@@ -173,6 +236,13 @@
 
 <script th:fragment="custom_javascript" type="text/javascript">
     /*<![CDATA[*/
+
+    function bcfChange(e) {
+        var bcf = e.value;
+        var id = e.placeholder;
+        document.getElementById(id).innerHTML = 1 - bcf;
+    }
+
     window.onload = function () {
         document.getElementById('MatchingForm').onsubmit = function (e) {
             e.preventDefault();
@@ -183,11 +253,32 @@
                 var placehold = item.getAttribute('placeholder');
                 item.type = 'text';
                 item.value = placehold + '|' + item.value;
-                console.log("item updated:", item.value);
+                console.log("Item updated:", item.value);
             }
+
+            var bobotBcfs = document.getElementsByClassName('bobot-bcf');
+            for (var indeks = 0; indeks < bobotBcfs.length; indeks++) {
+                var item = bobotBcfs.item(indeks);
+                var placehold = item.getAttribute('placeholder');
+                item.type = 'text';
+                item.value = placehold + '|' + item.value;
+                console.log("Item Bcfs: " + item.value);
+            }
+
+            var bobotCrits = document.getElementsByClassName('bobot-crits');
+            for (var indeks = 0; indeks < bobotCrits.length; indeks++) {
+                var item = bobotCrits.item(indeks);
+                var placehold = item.getAttribute('placeholder');
+                item.type = 'text';
+                item.value = placehold + '|' + item.value;
+                console.log("Item Crits: " + item.value);
+            }
+
             this.submit();
         };
     };
+
+
     /*]]>*/
 </script>
 </body>

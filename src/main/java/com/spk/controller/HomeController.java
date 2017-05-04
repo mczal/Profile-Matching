@@ -1,5 +1,6 @@
 package com.spk.controller;
 
+import com.spk.command.BobotCritBSFBCF;
 import com.spk.command.EditProfileDtoRequest;
 import com.spk.command.NKISubcriteria;
 import com.spk.command.SearchDtoRequest;
@@ -25,7 +26,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -50,12 +50,12 @@ public class HomeController {
   private UserService userService;
 
   private List<UserResultWrapper> calculateProfileMatching(List<NKISubcriteria> nkiSubcriterias,
-      List<User> users) {
+      List<User> users, List<BobotCritBSFBCF> bobotsz) {
     List<UserResultWrapper> results = new ArrayList<>();
 
     users.forEach(user -> {
       //      logger.info("calculation for user: " + user.getId());
-      System.err.println("Alternative (user): #" + user.getUsername());
+      //      System.err.println("Alternative (user): #" + user.getUsername());
       List<Criteria> criterias = criteriaService.findAll();
       List<Double> allCriteriaResult = new ArrayList<>();
       criterias.forEach(crit -> {
@@ -98,13 +98,21 @@ public class HomeController {
           sfSum += s;
         }
         double NSF = sfSum / sfCount * 1.0;
-        double totalCriteriaScore = (crit.getCFWeight() * NCF) + (crit.getSFWeight() * NSF);
-        //        logger.info("totalCriteriaScore: " + totalCriteriaScore);
-        double critScoreTimesCritWeight = totalCriteriaScore * crit.getWeight();
-        allCriteriaResult.add(critScoreTimesCritWeight);
+
+        bobotsz.stream()
+            .filter(bobotCritBSFBCF -> bobotCritBSFBCF.getCriteriaId().equals(crit.getId()))
+            .forEach(bobotCritBSFBCF -> {
+              double totalCriteriaScore =
+                  (bobotCritBSFBCF.getBCF() * NCF) + (bobotCritBSFBCF.getBSF() * NSF);
+              //        logger.info("totalCriteriaScore: " + totalCriteriaScore);
+              double critScoreTimesCritWeight =
+                  totalCriteriaScore * bobotCritBSFBCF.getBobotCriteria();
+              allCriteriaResult.add(critScoreTimesCritWeight);
+            });
+
       });
 
-      logger.info("\nAllCriteriaResult: " + allCriteriaResult.toString());
+      //      logger.info("\nAllCriteriaResult: " + allCriteriaResult.toString());
       double sumAllCriteriaResult = 0;
       for (Double aDouble : allCriteriaResult) {
         sumAllCriteriaResult += aDouble;
@@ -130,14 +138,14 @@ public class HomeController {
 
     Collections.sort(results, (o1, o2) -> {
       if (o1.getTotalScore() > o2.getTotalScore()) {
-        return 1;
-      } else if (o1.getTotalScore() < o2.getTotalScore()) {
         return -1;
+      } else if (o1.getTotalScore() < o2.getTotalScore()) {
+        return 1;
       } else {
         return 0;
       }
     });
-    return results;
+    return results.subList(0, 5);
   }
 
   private Authentication getAuth() {
@@ -153,7 +161,7 @@ public class HomeController {
 
   @RequestMapping(method = RequestMethod.POST,
       value = "/profile-matching")
-  public String postSearchMatching(Model model, SearchDtoRequest object) {
+  public String postSearchMatching(Model model, SearchDtoRequest object) throws Exception {
     //    logger.info("\n" + object.toString() + "\n");
     UserDetails userDetails = (UserDetails) getAuth().getPrincipal();
     List<User> users =
@@ -187,7 +195,7 @@ public class HomeController {
           return true;
         } else {
           String[] splitter = object.getAge().split("-");
-          logger.info("Splitter: " + Arrays.toString(splitter));
+          //          logger.info("Splitter: " + Arrays.toString(splitter));
           int lowerBound = Integer.parseInt(splitter[0]);
           int upperBound = Integer.parseInt(splitter[1]);
           if (user.getAge().compareTo(lowerBound) >= 0
@@ -220,7 +228,7 @@ public class HomeController {
      * */
     currentResults = new ArrayList<>();
     if (!object.getWeight().equalsIgnoreCase("ignore")) {
-      logger.info("Not equals ignore for weight");
+      //      logger.info("Not equals ignore for weight");
       //      currentResults = ;
       users.stream().filter(user -> {
         if (object.getWeight().contains("<")) {
@@ -237,7 +245,7 @@ public class HomeController {
           return true;
         } else {
           String[] splitter = object.getWeight().split("-");
-          logger.info("Splitter: " + Arrays.toString(splitter));
+          //          logger.info("Splitter: " + Arrays.toString(splitter));
           double lowerBound = Integer.parseInt(splitter[0]) * 1.0;
           double upperBound = Integer.parseInt(splitter[1]) * 1.0;
           if (user.getWeight().compareTo(lowerBound) >= 0
@@ -270,7 +278,7 @@ public class HomeController {
      * */
     currentResults = new ArrayList<>();
     if (!object.getHeight().equalsIgnoreCase("ignore")) {
-      logger.info("Not equals ignore for height");
+      //      logger.info("Not equals ignore for height");
       //      currentResults = ;
       users.stream().filter(user -> {
         if (object.getHeight().contains("<")) {
@@ -287,7 +295,7 @@ public class HomeController {
           return true;
         } else {
           String[] splitter = object.getHeight().split("-");
-          logger.info("Splitter: " + Arrays.toString(splitter));
+          //          logger.info("Splitter: " + Arrays.toString(splitter));
           double lowerBound = Integer.parseInt(splitter[0]) * 1.0;
           double upperBound = Integer.parseInt(splitter[1]) * 1.0;
           if (user.getHeight().compareTo(lowerBound) >= 0
@@ -319,7 +327,7 @@ public class HomeController {
      * */
     currentResults = new ArrayList<>();
     if (object.getReligion() != Religion.IGNORE) {
-      logger.info("Not equals ignore for religion");
+      //      logger.info("Not equals ignore for religion");
       users.stream().filter(user -> user.getReligion() == object.getReligion())
           .forEach(currentResults::add);
     }
@@ -339,11 +347,19 @@ public class HomeController {
     }
 
 
-    logger.info("Users: " + users.toString());
+    //    logger.info("Users: " + users.toString());
+
+    //    if (1 == 1) {
+    //      throw new Exception(
+    //          "\n" + object.getBobotBcf().toString() + "\n" + object.getBobotCrit() + "\n");
+    //    }
+
+
+    logger.info("\n" + object.parseBobotsz() + "\n");
 
     List<UserResultWrapper> results =
-        this.calculateProfileMatching(object.parseNkisString(), users);
-    logger.info("\n\nResult In Controller: " + results.toString());
+        this.calculateProfileMatching(object.parseNkisString(), users, object.parseBobotsz());
+    //    logger.info("\n\nResult In Controller: " + results.toString());
 
     model.addAttribute("results", results);
     model.addAttribute("auth", getAuth());
