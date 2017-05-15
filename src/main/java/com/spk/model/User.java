@@ -32,6 +32,7 @@ public class User extends McnBaseEntity {
    * Initial Criteria
    */
   @Column
+  @Enumerated(EnumType.STRING)
   private Gender gender;
 
   @Column

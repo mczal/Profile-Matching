@@ -145,7 +145,11 @@ public class HomeController {
         return 0;
       }
     });
-    return results.subList(0, 5);
+    if (results.size() > 5) {
+      return results.subList(0, 5);
+    } else {
+      return results;
+    }
   }
 
   private Authentication getAuth() {
@@ -173,6 +177,7 @@ public class HomeController {
       model.addAttribute("view", "home/result");
       return LAYOUTS;
     }
+
     /**
      * Check For Age
      * */
