@@ -46,14 +46,14 @@ var Login = function() {
             },
 
             submitHandler: function(form) {
-                form.submit(); // form validation success, call ajax form submit
+                form.submit(); // form constraint success, call ajax form submit
             }
         });
 
         $('.login-form input').keypress(function(e) {
             if (e.which == 13) {
                 if ($('.login-form').validate().form()) {
-                    $('.login-form').submit(); //form validation success, call ajax form submit
+                    $('.login-form').submit(); //form constraint success, call ajax form submit
                 }
                 return false;
             }

@@ -86,7 +86,7 @@ var ComponentsSelect2 = function() {
             $(this).parent().nextAll("select").prop("disabled", !this.checked);
         });
 
-        // copy Bootstrap validation states to Select2 dropdown
+        // copy Bootstrap constraint states to Select2 dropdown
         //
         // add .has-waring, .has-error, .has-succes to the Select2 dropdown
         // (was #select2-drop in Select2 v3.x, in Select2 v4 can be selected via

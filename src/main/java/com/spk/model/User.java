@@ -13,7 +13,8 @@ import java.util.List;
  */
 @Entity
 @Table(name = "user",
-    uniqueConstraints = {@UniqueConstraint(columnNames = "username")})
+    uniqueConstraints = {@UniqueConstraint(columnNames = "username"),
+        @UniqueConstraint(columnNames = "email")})
 public class User extends McnBaseEntity {
   private static final long serialVersionUID = -4067980028045491570L;
 

@@ -1,6 +1,6 @@
 var FormValidation = function () {
 
-    // basic validation
+    // basic constraint
     var handleValidation1 = function() {
         // for more info visit the official plugin documentation: 
             // http://docs.jquery.com/Plugins/Validation
@@ -102,7 +102,7 @@ var FormValidation = function () {
 
     }
 
-    // validation using icons
+    // constraint using icons
     var handleValidation2 = function() {
         // for more info visit the official plugin documentation: 
             // http://docs.jquery.com/Plugins/Validation
@@ -184,7 +184,7 @@ var FormValidation = function () {
 
     }
 
-    // advance validation
+    // advance constraint
     var handleValidation3 = function() {
         // for more info visit the official plugin documentation: 
         // http://docs.jquery.com/Plugins/Validation
@@ -310,7 +310,7 @@ var FormValidation = function () {
 
             });
 
-             //apply validation on select2 dropdown value change, this only needed for chosen dropdown integration.
+             //apply constraint on select2 dropdown value change, this only needed for chosen dropdown integration.
             $('.select2me', form3).change(function () {
                 form3.validate().element($(this)); //revalidate the chosen dropdown value and show error or success message for the input
             });

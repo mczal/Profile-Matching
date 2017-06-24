@@ -15,6 +15,8 @@
     <link rel="stylesheet" th:href="@{/assets/login/css/validify.css}" type="text/css" media="all"/>
     <link rel="stylesheet" th:href="@{/assets/login/css/style.css}" type="text/css" media="all"/>
 
+    <link rel="stylesheet" th:href="@{/assets/css/a.css}" type="text/css" media="all"/>
+
     <!-- //Custom-Style-Sheet -->
 
     <!-- Fonts -->
@@ -25,6 +27,11 @@
 
     <!-- Style -->
     <style type="text/css">
+
+        .white-color {
+            color: white;
+        }
+
         @-webkit-keyframes AnimationName {
             0% {
                 background-position: 15% 0%
@@ -108,6 +115,13 @@
 
 <div class="containerw3layouts-agileits">
 
+    <section class="content-header" th:fragment="flash">
+        <p class="alert alert-success" th:if="${success != null}" th:text="${success}"></p>
+        <p class="alert alert-danger" th:if="${danger != null}" th:text="${danger}"></p>
+        <p class="alert alert-warning" th:if="${warning != null}" th:text="${warning}"></p>
+        <p class="alert alert-info" th:if="${info != null}" th:text="${info}"></p>
+    </section>
+
     <form th:action="@{/login}" method="post">
         <div class="form-group agileits-w3layouts">
             <input type="text" class="form-control agileinfo textbox" name="username"
@@ -120,10 +134,13 @@
                    placeholder="Password"/>
         </div>
         <div class="form-group">
-            <a href="#" class="btn btn-default">REGISTER</a><a href="#">
+            <a th:href="@{/register}" class="btn btn-default">REGISTER</a><a>
             <button class="btn btn-primary" ng-click="successLogin()"><i
-                    class="fa agileinfo fa-arrow-circle-right">&nbsp; LOGIN ADMIN</i></button>
+                    class="fa agileinfo fa-arrow-circle-right">&nbsp; LOGIN</i></button>
         </a>
+        </div>
+        <div class="form-group">
+            <a href="#" class="btn btn-outline-success white-color">Try Our Free Trial !</a>
         </div>
     </form>
     <!-- <form action="file:///D:/Documents/Mc Rizals Documents/PERKULIAHAN/Semester 7/KBT/WEB/prototype/landing-forum.html" id="demo" novalidate> -->
@@ -132,7 +149,7 @@
 </div>
 
 <div class="w3lsfooteragileits">
-    <p> All Rights Reserved | <a href="#">Universitas Katolik Parahyangan</a></p>
+    <p> All Rights Reserved | <a href="#">Mohamad Fahrizal Septrianto</a></p>
 </div>
 
 
